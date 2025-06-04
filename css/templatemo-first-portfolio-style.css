@@ -13,7 +13,7 @@ https://templatemo.com/tm-578-first-portfolio
 :root {
   --white-color:                  #ffffff;
   --primary-color:                #535da1;
-  --secondary-color:              #14B789;
+  --secondary-color:              #b2b2ee;
   --section-bg-color:             #f9f9f9;
   --dark-color:                   #000000;
   --p-color:                      #717275;
@@ -482,20 +482,29 @@ strong {
 }
 
 .hero-title,
-.hero h2 {
+.hero h5 {
   background: var(--white-color);
   box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
   border-radius: var(--border-radius-large);
   display: inline-block;
   padding: 8px 24px;
+  color: var(--primary-color);
 }
 
 .hero-title {
 	font-size: 44px;
+  color: var(--dark-color);
 }
 
 .hero h2 {
 	font-size: 38px;
+}
+
+.hero h6 {
+	font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--dark-color);
 }
 
 .hero-text {
@@ -511,20 +520,27 @@ strong {
   height: 350px;
   position: absolute;
   z-index: 22;
-  top: -50px;
+  top: 0;
   right: 0;
   left: 0;
   margin: auto;
   pointer-events: none;
+  overflow: hidden; /* optional, to clip overflow */
 }
 
 .hero-image {
-  position: absolute;
-  z-index: 22;
-  top: 0;
-  width: 100%;
-  min-width: 550px;
+  position: absolute;       /* change from relative to absolute */
+  top: 42%;                /* vertical center */
+  left: 52%;               /* horizontal center */
+  transform: translate(-50%, -50%); /* center by shifting back half width & height */
+  width: 80%;              /* or any size you want inside the wrap */
+  height: auto;
+  max-width: 300px;         /* remove max-width restriction */
+  margin: 0;               /* reset margins */
+  z-index: 23;             /* above wrap */
 }
+
+
 
 .hero svg {
   position: absolute;
@@ -995,7 +1011,7 @@ strong {
   }
 
   .hero-image {
-    min-width: 650px;
+    min-width: unset !important;
   }
   
   .hero-title,
