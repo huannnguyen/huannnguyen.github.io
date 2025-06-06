@@ -19,6 +19,8 @@ https://templatemo.com/tm-578-first-portfolio
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
   --featured-border-color:        #727aab;
+  --coin-color:                   gold;
+   --secondary-color-transparent: rgba(178, 178, 238, 0.4);
 
   --body-font-family:             'DM Sans', sans-serif;
 
@@ -26,7 +28,7 @@ https://templatemo.com/tm-578-first-portfolio
   --h2-font-size:                 48px;
   --h3-font-size:                 36px;
   --h4-font-size:                 32px;
-  --h5-font-size:                 24px;
+  --h5-font-size:                 30px;
   --h6-font-size:                 22px;
   --p-font-size:                  18px;
   --menu-font-size:               12px;
@@ -135,8 +137,8 @@ a:hover {
 }
 
 .section-padding {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 90px;
 }
 
 b,
@@ -145,7 +147,7 @@ strong {
 }
 
 .section-title-wrap {
-  background: var(--secondary-color);
+  background: var(--primary-color);
   border-radius: var(--border-radius-small);
   padding: 10px 30px;
 }
@@ -294,7 +296,7 @@ strong {
 }
 
 .custom-link:hover {
-	background-color: var(--secondary-color);
+	background-color: var(--coin-color);
 }
 
 
@@ -656,7 +658,7 @@ strong {
   position: relative;
   overflow: hidden;
   margin-bottom: 24px;
-  padding: 40px 40px 240px 40px;
+  padding: 40px 40px 80px 40px;
   transition: all 0.5s;
 }
 
@@ -672,8 +674,8 @@ strong {
 }
 
 .services-thumb:hover .services-icon-wrap {
-  background: var(--secondary-color);
-  border-color: var(--secondary-color);
+  background: var(--secondary-color-transparent);
+  border-color: var(--secondary-color-transparent);
   color: var(--white-color);
 }
 
@@ -684,7 +686,7 @@ strong {
   bottom: 0;
   right: 0;
   width: 50%;
-  height: 55%;
+  height: 40%;
   transform: rotate(-35deg) translateY(55px);
   transition: all ease 0.5s;
 }
@@ -1000,8 +1002,8 @@ strong {
 -----------------------------------------*/
 @media screen and (min-width: 1600px) {
   .hero {
-    padding-top: 380px;
-    padding-bottom: 380px;
+    padding-top: 320px;
+    padding-bottom: 320px;
   }
 
   .hero-image-wrap {
@@ -1201,3 +1203,170 @@ strong {
   }
 }
 
+/*---------------------------------------
+  COIN              
+-----------------------------------------*/
+
+.y-axis-container {
+   animation: bounce 2.6s infinite ease-in-out;
+   position: relative; /* Add this line */
+   z-index: 22;       /* Add this line */
+}
+
+.shadow {
+   animation: scaling 2.6s infinite ease-in-out;
+   z-index: 22;       /* Keep the shadow behind the coin */
+   position: relative;
+}
+
+.coin {
+  position : relative;
+  height : 300px;
+  left : 150px;
+  width: 240px;
+  top: 30px;
+  background : gold;
+  border-radius : 100%;
+  overflow : hidden;
+}
+
+.side-coin {
+  position : absolute;
+  left : 260px;
+  height : 300px;
+  width: 35px;
+  background : #f5b642;
+  top: 30px;
+}
+
+.side {
+  position: absolute;
+  background : #f5b642;
+  left : 177px;
+  width : 240px;
+  height : 304px;
+  top: 28px;
+}
+
+.shine {
+  width : 400px;
+  height : 20px;
+  background : rgba(255,255,255,0.65);
+  transform: rotate(25deg);
+  animation : shine 5s infinite; 
+}
+
+.flash {
+  z-index: 200;
+  position : absolute;
+  width : 15px;
+  height : 15px;
+  background : white;
+  top: 40px;
+  right : 150px;
+  animation : flash 6s infinite;
+}
+
+.shadow { 
+  position : absolute;
+  /* left : calc(50% - 75px); */
+  left: 195px;
+  top : 350px;
+  background : rgba(0,0,0,0.2);
+  height : 40px;
+  width : 200px;
+  animation : scaling 2.6s infinite;
+  border-radius: 100%;
+}
+
+@keyframes bounce {
+  20% {
+    animation-timing-function: ease-out;
+    transform: translateY(-60px);
+  }
+  
+   50% {
+    animation-timing-function: ease-out;
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes scaling {
+  20% {
+    transform: scale(0.6);
+  }
+  
+  50% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes flash {
+  0% {
+    transform : rotate(0deg) scale(0);
+  }
+  8% {
+    transform : rotate(0deg) scale(0);
+  }
+  10% {
+    transform : rotate(150deg) scale(1.8);
+  }
+  15% {
+    transform : rotate(45deg) scale(0);
+  }
+  100% {
+    transform : rotate(45deg) scale(0);
+  }
+}
+
+
+@keyframes shine {
+  20% {
+    transform : rotate(25deg) translateY(400px);
+  }
+  
+  100% {
+    transform : rotate(25deg) translateY(400px);
+  }
+}
+
+.coin-image {
+  position: absolute;
+  top: 45%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 220px; /* adjust as needed */
+  height: 220px; /* adjust as needed */
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+/*---------------------------------------
+  Random Rules              
+-----------------------------------------*/
+
+.no-border-icon a {
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.transparent-bordered {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.transparent-bordered:hover {
+  background: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  color: var(--white-color);
+}
+
+
+.transparent-bordered:hover h3 {
+  color: var(--white-color); /* makes h3 text white on hover */
+}
