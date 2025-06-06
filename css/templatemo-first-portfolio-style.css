@@ -1374,6 +1374,14 @@ strong {
     overflow: visible;
 }
 
+.tab-content {
+    overflow: visible;
+}
+
+.tab-pane {
+    overflow: visible;
+}
+
 /*---------------------------------------
   Custom Tab          
 -----------------------------------------*/
