@@ -1366,7 +1366,60 @@ strong {
   color: var(--white-color);
 }
 
-
 .transparent-bordered:hover h3 {
   color: var(--white-color); /* makes h3 text white on hover */
+}
+
+.col-lg-5.col-12 {
+    overflow: visible;
+}
+
+/*---------------------------------------
+  Custom Tab          
+-----------------------------------------*/
+.custom-tabs {
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.custom-tabs .nav-link {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-weight: var(--font-weight-medium);
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.custom-tabs .nav-link:hover {
+    color: var(--secondary-color);
+    background: transparent;
+}
+
+.custom-tabs .nav-link.active {
+    color: var(--secondary-color);
+    background: transparent;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.custom-tabs .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.custom-tabs .nav-link:hover::after {
+    width: 100%;
+}
+
+.custom-tabs .nav-link.active::after {
+    width: 100%;
 }
