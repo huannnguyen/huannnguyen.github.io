@@ -1157,9 +1157,28 @@ strong {
     margin-right: 12px;
     margin-left: 12px;
   }
+  .y-axis-container,
+  .shadow {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 0px;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 0px;
+  }
+  
+  .y-axis-container,
+  .shadow {
+    display: none;
+  }
+  
   h1 {
     font-size: 40px;
   }
