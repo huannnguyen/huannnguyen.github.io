@@ -164,8 +164,8 @@ strong {
 }
 
 .avatar-image-large {
-  width: 90.4px;
-  height: 90.4px;
+  width: clamp(56px, 8vw, 90.4px);
+  height: clamp(56px, 8vw, 90.4px);
 }
 
 
@@ -195,7 +195,7 @@ strong {
 .spinner:before {
   content: '';
   box-sizing: border-box;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 45px;
@@ -465,6 +465,12 @@ strong {
   top: 8px;
 }
 
+.back-btn {
+    position: fixed; /* sticks in normal flow until scrolling past it */
+    top: 90px;        /* height of your navbar + some spacing */
+    z-index: 800;    /* stays above other content */
+    margin: 10px;   /* spacing above/below */
+}
 
 /*---------------------------------------
   HERO              
@@ -473,13 +479,27 @@ strong {
   background: var(--secondary-color);
   position: relative;
   overflow: hidden;
-  padding-top: 330px;
-  padding-bottom: 330px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+  padding-top: 150px;
+  margin-top: 0px;
 }
 
 @media  screen and (min-width: 991px) {
   .hero {
     height: 60vh;
+    padding-top: 330px;
+    padding-bottom: 330px;
+    margin-top: 0;
+
+  @media screen and (min-width: 991px) {
+    .navbar {
+      position: absolute;
+    }
+  }
   }
 }
 
@@ -494,7 +514,7 @@ strong {
 }
 
 .hero-title {
-	font-size: 44px;
+	font-size: clamp(36px, 3.5vw, 56px);
   color: var(--dark-color);
 }
 
@@ -658,8 +678,23 @@ strong {
   position: relative;
   overflow: hidden;
   margin-bottom: 24px;
-  padding: 40px 40px 80px 40px;
+  padding: 40px 40px 40px 40px;
   transition: all 0.5s;
+}
+
+/* Smaller, responsive text for project/service cards */
+.services-thumb h3 {
+  font-size: clamp(24px, 3vw, 24px);
+  margin-bottom: 8px;
+}
+
+.services-thumb p {
+  font-size: clamp(14px, 1.6vw, 15px);
+  line-height: 1.4;
+}
+
+.services-thumb .services-price-text {
+  font-size: 12px; /* keep tags compact */
 }
 
 .services-thumb-up {
@@ -780,6 +815,11 @@ strong {
   color: var(--secondary-color);
   text-transform: uppercase;
   margin-bottom: 5px;
+}
+
+.projects-thumb h3 {
+  font-size: clamp(24px, 2vw, 30px);
+  margin-bottom: 8px;
 }
 
 
@@ -1096,14 +1136,9 @@ strong {
     padding-bottom: 10px;
   }
 
-  .hero {
-    padding-top: 200px;
-    padding-bottom: 400px;
-  }
-
   .hero-text {
     top: 0;
-    margin-bottom: 120px;
+    margin-bottom: 0;
   }
 
   .about-thumb {
@@ -1122,7 +1157,7 @@ strong {
 
   .services-thumb {
     margin-bottom: 32px;
-    padding-bottom: 270px;
+    padding-bottom: 20px;
   }
 
   .services-icon-wrap {
@@ -1152,32 +1187,21 @@ strong {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .y-axis-container,
+  .shadow {
+    display: none !important;
+  }
+}
+
 @media screen and (max-width: 575px) {
   .navbar .container {
     margin-right: 12px;
     margin-left: 12px;
   }
-  .y-axis-container,
-  .shadow {
-    display: none;
-  }
-
-  .hero {
-    padding-top: 200px;
-    padding-bottom: 0px;
-  }
 }
 
 @media screen and (max-width: 480px) {
-  .hero {
-    padding-top: 200px;
-    padding-bottom: 0px;
-  }
-  
-  .y-axis-container,
-  .shadow {
-    display: none;
-  }
   
   h1 {
     font-size: 40px;
