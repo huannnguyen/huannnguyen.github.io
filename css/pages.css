@@ -1,0 +1,37 @@
+.hero {
+    background-color: var(--primary-color);
+    width: 100%;
+    min-height: 500px;
+    padding: clamp(180px, 10vw, 180px)   /* top */
+        clamp(5px, 12vw, 300px)    /* right */
+        clamp(10px, 8vw, 60px)     /* bottom */
+        clamp(5px, 12vw, 300px);   /* left */
+}
+
+.section-padding {
+    padding: clamp(20px, 5vw, 40px) clamp(5px, 12vw, 300px);
+}
+
+p {
+    color: black !important;
+}
+
+h2 {
+    color: var(--primary-color) !important;
+    font-size: 36px !important;
+}
+
+.nav-link.large {
+    font-size: 30px !important;
+}
+
+h5 {
+    font-size: 30px !important;
+}
+
+.back-btn {
+    position: fixed; /* sticks in normal flow until scrolling past it */
+    top: 90px;        /* height of your navbar + some spacing */
+    margin: 10px;   /* spacing above/below */
+    z-index: 999;       /* higher than other elements */
+}

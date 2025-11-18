@@ -139,6 +139,8 @@ a:hover {
 .section-padding {
   padding-top: 100px;
   padding-bottom: 90px;
+  padding-left: clamp(5px, 12vw, 150px);
+  padding-right: clamp(5px, 12vw, 150px);
 }
 
 b,
@@ -463,13 +465,6 @@ strong {
 
 .navbar-toggler .navbar-toggler-icon::after {
   top: 8px;
-}
-
-.back-btn {
-    position: fixed; /* sticks in normal flow until scrolling past it */
-    top: 90px;        /* height of your navbar + some spacing */
-    z-index: 800;    /* stays above other content */
-    margin: 10px;   /* spacing above/below */
 }
 
 /*---------------------------------------
@@ -1072,7 +1067,7 @@ strong {
   }
 
   h3 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   h4 {
@@ -1212,7 +1207,7 @@ strong {
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   h4 {
