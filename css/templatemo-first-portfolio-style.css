@@ -31,6 +31,7 @@ https://templatemo.com/tm-578-first-portfolio
   --h5-font-size:                 30px;
   --h6-font-size:                 22px;
   --p-font-size:                  18px;
+  --li-font-size:                 16px;
   --menu-font-size:               12px;
   --copyright-font-size:          14px;
 
@@ -107,7 +108,7 @@ p {
 
 ul li {
   color: var(--p-color);
-  font-size: var(--p-font-size);
+  font-size: var(--li-font-size);
   font-weight: var(--font-weight-normal);
 }
 
